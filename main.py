@@ -69,6 +69,17 @@ while True:
                                  (xPrinter * (cellSize + margin), yPrinter * (cellSize + margin),
                                   cellSize, cellSize))
             
+            '''
+            if matrix.getCell(xPrinter - 1, yPrinter - 1)["hasMine"] == True:
+                pygame.draw.rect(window,
+                                    errorColour,
+                                    (xPrinter * (cellSize + margin), yPrinter * (cellSize + margin),
+                                    cellSize, cellSize))
+            textWriter.render_to(window,
+                                     ((xPrinter * (cellSize + margin)) + (cellSize // 4), (yPrinter * (cellSize + margin)) + (cellSize // 4)),
+                                     str(matrix.countMines(xPrinter - 1, yPrinter - 1)),
+                                     errorColour)'''
+            
     for event in pygame.event.get():
         if event.type == pygame.MOUSEBUTTONDOWN:
             xPos, yPos = pygame.mouse.get_pos()
