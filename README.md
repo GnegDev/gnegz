@@ -1,5 +1,5 @@
 # gnegz
 silly minesweeper
 
-Lclick to open a cell__
+Lclick to open a cell  
 Rclick to mark
