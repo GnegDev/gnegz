@@ -24,6 +24,8 @@ matrix = Matrix(matrixSize)
 infoText = f"0/{matrix.winScore}"
 
 pygame.init()
+pygame.display.set_caption("gnegz")
+pygame.display.set_icon(pygame.image.load("resources/gneg.png"))
 windowSize = (cellSize + margin) * matrixSize + ((cellSize * 2) + margin)
 textWriter = pygame.freetype.Font("resources/" + font, cellSize)
 clock = pygame.time.Clock()
