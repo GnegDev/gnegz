@@ -1,0 +1,12 @@
+{
+    "matrixSize": 10,
+    "cellSize": 20,
+    "colours": {
+        "background": [25, 25, 25],
+        "accent": [45, 66, 99],
+        "text": [255, 255, 255],
+        "disabled": [0, 0, 0],
+        "error": [200, 75, 49]
+    },
+    "font": "roboto.ttf"
+}
