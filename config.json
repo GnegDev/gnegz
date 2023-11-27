@@ -1,5 +1,5 @@
 {
-    "matrixSize": 10,
+    "matrixSize": 20,
     "cellSize": 20,
     "colours": {
         "background": [25, 25, 25],
