@@ -115,7 +115,7 @@ while True:
 
     pygame.draw.rect(window,
                      accentColour,
-                     (cellSize + margin, (cellSize + margin) * matrixSize + margin,
+                     (cellSize + margin, (cellSize + margin) * (matrixSize + 1),
                       (cellSize + margin) * matrixSize - margin, cellSize))
     textWriter.render_to(window,
                          (cellSize + (margin * 2), (cellSize + margin) * (matrixSize + 1) + (margin * 0.6)),
