@@ -29,7 +29,7 @@ pygame.display.set_icon(pygame.image.load("resources/gneg.png"))
 windowSize = (cellSize + margin) * matrixSize + ((cellSize * 2) + margin)
 textWriter = pygame.freetype.Font("resources/" + font, cellSize)
 clock = pygame.time.Clock()
-window = pygame.display.set_mode((windowSize, windowSize + cellSize + (margin * 2)))
+window = pygame.display.set_mode((windowSize, windowSize + cellSize + margin))
 
 
  
@@ -106,16 +106,19 @@ while True:
                         matrix.getCell(xMatrixPos, yMatrixPos)["mode"] = "closed"
                     else: 
                         matrix.getCell(xMatrixPos, yMatrixPos)["mode"] = "marked"
-
+            elif (xMatrixPos >= 0 and xMatrixPos < matrixSize) and yMatrixPos == matrixSize:
+                gamingFlag = True
+                lossFlag = False
+                matrix = Matrix(matrixSize)
         elif event.type == pygame.QUIT:
             runningFlag = False
 
     pygame.draw.rect(window,
                      accentColour,
-                     (cellSize + margin, (cellSize + margin) * (matrixSize + 1) + margin,
+                     (cellSize + margin, (cellSize + margin) * matrixSize + margin,
                       (cellSize + margin) * matrixSize - margin, cellSize))
     textWriter.render_to(window,
-                         (cellSize + (margin * 2), (cellSize + margin) * (matrixSize + 1) + (margin * 1.6)),
+                         (cellSize + (margin * 2), (cellSize + margin) * (matrixSize + 1) + (margin * 0.6)),
                          infoText,
                          textColour)
     infoText = f"{matrix.score} / {matrix.winScore}"
