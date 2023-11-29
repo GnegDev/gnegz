@@ -36,6 +36,7 @@ window = pygame.display.set_mode((windowSize, windowSize + cellSize + margin))
 runningFlag = True
 lossFlag = False
 gamingFlag = True
+firstClickFlag = True
 while True:
     window.fill(backgroundColour)
 
@@ -91,6 +92,9 @@ while True:
 
             if (xMatrixPos < matrixSize and yMatrixPos < matrixSize) and (xMatrixPos >= 0 and yMatrixPos >= 0) and gamingFlag:
                 if event.button == 1:
+                    if firstClickFlag:
+                    	matrix.setSpawn(xMatrixPos, yMatrixPos)
+                    	firstClickFlag = False
                     if matrix.getCell(xMatrixPos, yMatrixPos)["mode"] != "marked":
                         matrix.getCell(xMatrixPos, yMatrixPos)["mode"] = "opened"
                         if matrix.getCell(xMatrixPos, yMatrixPos)["hasMine"] == False:
@@ -110,6 +114,7 @@ while True:
                 gamingFlag = True
                 lossFlag = False
                 matrix = Matrix(matrixSize)
+                firstClickFlag = True
         elif event.type == pygame.QUIT:
             runningFlag = False
 
