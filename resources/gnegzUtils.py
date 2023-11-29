@@ -49,3 +49,9 @@ class Matrix:
         for yWriter in range(0, self.matrixSize):
             for xWriter in range(0, self.matrixSize):
                 self.matrix[yWriter][xWriter]["mode"] = "opened"
+                
+    def setSpawn(self, x, y):
+    	for yChecker in range(y - 1, y + 2):
+            for xChecker in range(x - 1, x + 2):
+                if yChecker >= 0 and yChecker < len(self.matrix) and xChecker >= 0 and xChecker < len(self.matrix):
+                    self.matrix[yChecker][xChecker]["hasMine"] = False                    
